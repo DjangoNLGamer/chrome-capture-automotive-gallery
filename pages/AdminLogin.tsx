@@ -3,16 +3,36 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (password.trim() === 'admin123') {
-      setError('');
-      navigate('/dragdrop');
-    } else {
-      setError('Verkeerd wachtwoord');
+
+    try {
+      // 🚀 Stuurt login-data naar jouw backend (server.js)
+      const response = await fetch('http://localhost:8080/api/admin-login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // ✅ Login geslaagd → ga naar je adminpagina
+        setError('');
+        navigate('/dragdrop');
+      } else {
+        // ❌ Verkeerd wachtwoord of username
+        setError(data.error || 'Verkeerde gebruikersnaam of wachtwoord');
+      }
+    } catch (err) {
+      console.error('❌ Server niet bereikbaar:', err);
+      setError('Server niet bereikbaar');
     }
   };
 
@@ -27,13 +47,22 @@ const AdminLogin = () => {
         </h1>
 
         <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Gebruikersnaam"
+          className="border border-gray-300 focus:border-yellow-500 focus:ring focus:ring-yellow-200 outline-none rounded-lg px-4 py-3 mb-5 w-full transition-all duration-300 text-gray-800 placeholder-gray-400"
+          required
+        />
+
+        <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Voer wachtwoord in"
           className="border border-gray-300 focus:border-yellow-500 focus:ring focus:ring-yellow-200 outline-none rounded-lg px-4 py-3 mb-5 w-full transition-all duration-300 text-gray-800 placeholder-gray-400"
-/>
-
+          required
+        />
 
         <button
           type="submit"

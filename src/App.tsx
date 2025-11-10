@@ -13,7 +13,7 @@ import Index from "../pages/Index";
 import NotFound from "../pages/NotFound";
 import AdminLogin from "../pages/adminlogin";
 import DragDrop from "../pages/dragdrop";
-import Contact from "@/components/Contact";
+import Contact from "../src/components/Contact";
 
 const queryClient = new QueryClient();
 

@@ -1,18 +1,18 @@
-// db.js
-import Database from 'better-sqlite3';
+import mysql from "mysql2";
 
-const db = new Database('./Portfolio.db');
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",       // laat leeg als je geen wachtwoord hebt ingesteld in XAMPP
+  database: "exoticdb"
+});
 
-// Maak de tabel aan (overslaat als hij al bestaat)
-db.prepare(`
-  CREATE TABLE IF NOT EXISTS photos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    category TEXT,
-    filepath TEXT,
-    uploaded_at TEXT DEFAULT CURRENT_TIMESTAMP,
-    filename TEXT
-  )
-`).run();
+db.connect(err => {
+  if (err) {
+    console.error("Database-verbinding mislukt:", err);
+  } else {
+    console.log("Verbonden met MySQL!");
+  }
+});
 
 export default db;
