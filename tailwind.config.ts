@@ -67,13 +67,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				automotive: {
-					black: '#0a0a0a',
-					charcoal: '#1a1a1a',
-					silver: '#c0c0c0',
-					chrome: '#e5e5e5',
-					gold: '#d4af37',
-					red: '#cc0000',
+				navy: {
+					DEFAULT: 'hsl(var(--navy))',
+					light: 'hsl(var(--navy-light))'
+				},
+				slate: 'hsl(var(--slate))',
+				gold: {
+					DEFAULT: 'hsl(var(--gold-accent))',
+					light: 'hsl(var(--gold-light))'
 				}
 			},
 			borderRadius: {
@@ -171,7 +172,8 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'automotive-gradient': 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%)',
+				'professional-gradient': 'linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%)',
+				'gold-gradient': 'linear-gradient(135deg, hsl(var(--gold-accent)) 0%, hsl(var(--gold-light)) 100%)',
 			}
 		}
 	},

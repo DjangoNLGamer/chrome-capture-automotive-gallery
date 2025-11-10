@@ -21,7 +21,7 @@ const Index = () => {
 
   useEffect(() => {
     // Ensure body has the right classes
-    document.body.className = 'bg-automotive-black text-white font-sans';
+    document.body.className = 'bg-background text-foreground font-sans';
   }, []);
 
   if (isLoading) {
@@ -30,7 +30,7 @@ const Index = () => {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-automotive-black text-white">
+      <div className="min-h-screen bg-background text-foreground">
         <Header />
         <Hero />
         <Portfolio />
