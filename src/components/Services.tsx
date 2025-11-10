@@ -93,13 +93,13 @@ const Diensten = () => {
   ];
 
   return (
-    <section id="diensten" className="py-20 bg-automotive-black">
+    <section id="diensten" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-6">
             {t('services.title')}
           </h2>
-          <p className="text-xl text-automotive-silver max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t('services.description')}
           </p>
         </div>
@@ -108,25 +108,25 @@ const Diensten = () => {
           {diensten.map((dienst, index) => (
             <div
               key={dienst.title}
-              className="glass-effect rounded-xl p-8 animate-fade-in"
+              className="glass-effect rounded-xl p-8 animate-fade-in card-hover"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <dienst.icon className="text-automotive-gold mb-6" size={48} />
-              <h3 className="text-2xl font-bold text-white mb-4">{dienst.title}</h3>
-              <p className="text-automotive-silver mb-6">{dienst.description}</p>
+              <dienst.icon className="text-gold mb-6" size={48} />
+              <h3 className="text-2xl font-bold text-foreground mb-4">{dienst.title}</h3>
+              <p className="text-muted-foreground mb-6">{dienst.description}</p>
 
               <ul className="space-y-2 mb-6">
                 {dienst.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-automotive-chrome">
-                    <div className="w-2 h-2 bg-automotive-gold rounded-full mr-3" />
+                  <li key={feature} className="flex items-center text-foreground">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-automotive-gold">{dienst.price}</span>
-                <div className="flex items-center text-automotive-silver">
+                <span className="text-2xl font-bold text-gold">{dienst.price}</span>
+                <div className="flex items-center text-muted-foreground">
                   <Clock size={16} className="mr-2" />
                   {dienst.duration}
                 </div>
@@ -140,7 +140,7 @@ const Diensten = () => {
           <h3 className="font-display text-3xl md:text-4xl font-bold gold-gradient mb-6">
             {t('services.pricing.title')}
           </h3>
-          <p className="text-lg text-automotive-silver max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t('services.pricing.description')}
           </p>
         </div>
@@ -149,31 +149,31 @@ const Diensten = () => {
           {pakketten.map((pkg, index) => (
             <div
               key={pkg.name}
-              className={`relative rounded-xl p-8 animate-scale-in ${
+              className={`relative rounded-xl p-8 animate-scale-in card-hover ${
                 pkg.popular
-                  ? 'bg-gradient-to-b from-automotive-gold/20 to-automotive-charcoal border-2 border-automotive-gold'
+                  ? 'bg-gradient-to-b from-gold/20 to-secondary border-2 border-gold'
                   : 'glass-effect'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-automotive-gold text-automotive-black px-6 py-2 rounded-full text-sm font-bold">
+                  <span className="bg-gold text-navy px-6 py-2 rounded-full text-sm font-bold">
                     {t('services.package.popular')}
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h4 className="text-2xl font-bold text-white mb-2">{pkg.name}</h4>
-                <div className="text-4xl font-bold text-automotive-gold mb-2">{pkg.price}</div>
-                <p className="text-automotive-silver">{pkg.duration} sessie</p>
+                <h4 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h4>
+                <div className="text-4xl font-bold text-gold mb-2">{pkg.price}</div>
+                <p className="text-muted-foreground">{pkg.duration} sessie</p>
               </div>
 
               <ul className="space-y-4 mb-8">
                 {pkg.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-automotive-chrome">
-                    <div className="w-2 h-2 bg-automotive-gold rounded-full mr-3 flex-shrink-0" />
+                  <li key={feature} className="flex items-center text-foreground">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -181,7 +181,7 @@ const Diensten = () => {
 
               <button
                 onClick={() => navigate('contact')}
-                className="w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 bg-automotive-gold text-automotive-black hover:bg-automotive-gold/90"
+                className="w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 bg-gold text-navy hover:bg-gold-light"
               >
                 {t('services.button.book')}
               </button>

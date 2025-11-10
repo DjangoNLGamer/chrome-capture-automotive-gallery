@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-automotive-charcoal">
+    <section id="about" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -21,7 +21,7 @@ const About = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-6">
               {t('about.title')}
             </h2>
-            <div className="space-y-6 text-lg text-automotive-silver leading-relaxed">
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>{t('about.description1')}</p>
               <p>{t('about.description2')}</p>
               <p>{t('about.description3')}</p>
@@ -31,7 +31,7 @@ const About = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-4 bg-automotive-gold hover:bg-automotive-gold/90 text-automotive-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 {t('about.workTogether')}
               </a>
@@ -42,7 +42,7 @@ const About = () => {
           <div className="animate-slide-in-right">
             {/* Placeholder for photographer image */}
             <div className="relative mb-12">
-              <div className="aspect-[4/5] bg-gradient-to-br from-automotive-charcoal to-automotive-black rounded-xl overflow-hidden">
+              <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-background rounded-xl overflow-hidden">
                 <img
                   src="https://i.ibb.co/7JkV7cHV/Whats-App-Image-2025-06-10-at-15-24-48-0a7bf359.jpg"
                   alt="Professional photographer"
@@ -50,8 +50,8 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 glass-effect rounded-xl p-6">
-                <p className="text-automotive-gold font-semibold">Professionele Fotograaf</p>
-                <p className="text-automotive-silver">Auto Fanaat</p>
+                <p className="text-gold font-semibold">Professionele Fotograaf</p>
+                <p className="text-muted-foreground">Auto Fanaat</p>
               </div>
             </div>
 
@@ -60,12 +60,12 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="glass-effect rounded-xl p-6 text-center animate-scale-in"
+                  className="glass-effect rounded-xl p-6 text-center animate-scale-in card-hover"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <stat.icon className="mx-auto text-automotive-gold mb-3" size={32} />
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-automotive-silver text-sm">{stat.label}</div>
+                  <stat.icon className="mx-auto text-gold mb-3" size={32} />
+                  <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
+                  <div className="text-muted-foreground text-sm">{stat.label}</div>
                 </div>
               ))}
             </div>

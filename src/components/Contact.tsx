@@ -76,13 +76,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-automotive-black">
+    <section id="contact" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-6">
             {t('contact.title')}
           </h2>
-          <p className="text-xl text-automotive-silver max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t('contact.description')}
           </p>
         </div>
@@ -90,27 +90,27 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info */}
           <div className="animate-slide-in-left">
-            <h3 className="text-2xl font-bold text-white mb-8">{t('contact.choose.us')}</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-8">{t('contact.choose.us')}</h3>
 
             <div className="space-y-6 mb-12">
               {contactInfo.map((info) => (
                 <a
                   key={info.title}
                   href={info.action}
-                  className="flex items-center p-4 glass-effect rounded-lg hover:bg-automotive-gold/10 transition-all duration-300 group"
+                  className="flex items-center p-4 glass-effect rounded-lg hover:bg-gold/10 transition-all duration-300 group"
                 >
-                  <info.icon className="text-automotive-gold mr-4" size={24} />
+                  <info.icon className="text-gold mr-4" size={24} />
                   <div>
-                    <div className="text-white font-semibold">{info.title}</div>
-                    <div className="text-automotive-silver">{info.details}</div>
+                    <div className="text-foreground font-semibold">{info.title}</div>
+                    <div className="text-muted-foreground">{info.details}</div>
                   </div>
                 </a>
               ))}
             </div>
 
             <div className="glass-effect rounded-xl p-8">
-              <h4 className="text-xl font-bold text-white mb-4">{t('contact.choose.us')}</h4>
-              <ul className="space-y-3 text-automotive-silver">
+              <h4 className="text-xl font-bold text-foreground mb-4">{t('contact.choose.us')}</h4>
+              <ul className="space-y-3 text-muted-foreground">
                 {[
                   t('contact.choose.equipment'),
                   t('contact.choose.turnaround'),
@@ -118,7 +118,7 @@ const Contact = () => {
                   t('contact.choose.pricing'),
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center">
-                    <div className="w-2 h-2 bg-automotive-gold rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
                     {item}
                   </li>
                 ))}
@@ -129,13 +129,13 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="animate-slide-in-right">
             <form onSubmit={handleSubmit} className="glass-effect rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-6">
                 {t('contact.form.title')}
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-automotive-silver mb-2">
+                  <label className="block text-muted-foreground mb-2">
                     {t('contact.form.name')}
                   </label>
                   <input
@@ -144,12 +144,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-automotive-charcoal border border-automotive-silver/30 rounded-lg text-white focus:border-automotive-gold focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors"
                     placeholder={t('contact.form.placeholder.name')}
                   />
                 </div>
                 <div>
-                  <label className="block text-automotive-silver mb-2">
+                  <label className="block text-muted-foreground mb-2">
                     {t('contact.form.email')}
                   </label>
                   <input
@@ -158,7 +158,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-automotive-charcoal border border-automotive-silver/30 rounded-lg text-white focus:border-automotive-gold focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors"
                     placeholder={t('contact.form.placeholder.email')}
                   />
                 </div>
@@ -166,7 +166,7 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-automotive-silver mb-2">
+                  <label className="block text-muted-foreground mb-2">
                     Telefoonnummer (optioneel)
                   </label>
                   <input
@@ -174,18 +174,18 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-automotive-charcoal border border-automotive-silver/30 rounded-lg text-white focus:border-automotive-gold focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors"
                     placeholder="06-12345678"
                   />
                 </div>
                 <div>
-                  <label className="block text-automotive-silver mb-2">Dienst</label>
+                  <label className="block text-muted-foreground mb-2">Dienst</label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-automotive-charcoal text-white border border-automotive-silver/30 rounded-lg focus:border-automotive-gold focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-background text-foreground border border-border rounded-lg focus:border-gold focus:outline-none transition-colors"
                   >
                     <option value="">Selecteer een dienst</option>
                     <option value="locatieshoot">Fotoshoot op locatie</option>
@@ -197,7 +197,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block text-automotive-silver mb-2">
+                <label className="block text-muted-foreground mb-2">
                   {t('contact.form.message')}
                 </label>
                 <textarea
@@ -206,14 +206,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-automotive-charcoal border border-automotive-silver/30 rounded-lg text-white focus:border-automotive-gold focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors resize-none"
                   placeholder={t('contact.form.placeholder.message')}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-automotive-gold hover:bg-automotive-gold/90 text-automotive-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full py-4 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 {t('contact.form.submit')}
               </button>

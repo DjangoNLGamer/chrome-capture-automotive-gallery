@@ -21,28 +21,28 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-automotive-charcoal py-12 border-t border-automotive-silver/20">
+    <footer className="bg-card py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <Camera className="text-automotive-gold mr-3" size={32} />
+              <Camera className="text-gold mr-3" size={32} />
               <div className="font-display text-2xl font-bold text-gradient">
                 EXOTIC<span className="gold-gradient">AUTOMOTIVE</span>
               </div>
             </div>
-            <p className="text-automotive-silver mb-6 max-w-md">
+            <p className="text-muted-foreground mb-6 max-w-md">
               {t('footer.brand.description')}
             </p>
             <div className="flex space-x-4">
-              <a href="mailto:hello@exoticautomotive.com" className="text-automotive-silver hover:text-automotive-gold transition-colors">
+              <a href="mailto:hello@exoticautomotive.com" className="text-muted-foreground hover:text-gold transition-colors">
                 <Mail size={20} />
               </a>
-              <a href="tel:+15551234567" className="text-automotive-silver hover:text-automotive-gold transition-colors">
+              <a href="tel:+15551234567" className="text-muted-foreground hover:text-gold transition-colors">
                 <Phone size={20} />
               </a>
-              <a href="#" className="text-automotive-silver hover:text-automotive-gold transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
                 <MapPin size={20} />
               </a>
             </div>
@@ -50,11 +50,11 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">{t('footer.quickLinks.title')}</h4>
+            <h4 className="text-foreground font-semibold mb-4">{t('footer.quickLinks.title')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={`#${link.id}`} className="text-automotive-silver hover:text-automotive-gold transition-colors">
+                  <a href={`#${link.id}`} className="text-muted-foreground hover:text-gold transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -64,13 +64,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-4">{t('footer.services.title')}</h4>
+            <h4 className="text-foreground font-semibold mb-4">{t('footer.services.title')}</h4>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.id}>
                   <a 
                     href="#services" 
-                    className="text-automotive-silver hover:text-automotive-gold transition-colors cursor-pointer"
+                    className="text-muted-foreground hover:text-gold transition-colors cursor-pointer"
                   >
                     {service.label}
                   </a>
@@ -80,8 +80,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-automotive-silver/20 mt-12 pt-8 text-center">
-          <p className="text-automotive-silver">{t('footer.copyright')}</p>
+        <div className="border-t border-border mt-12 pt-8 text-center">
+          <p className="text-muted-foreground">{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

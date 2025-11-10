@@ -44,13 +44,13 @@ const Reviews = () => {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-automotive-black">
+    <section id="reviews" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-4">
             {t('reviews.title')}
           </h2>
-          <p className="text-xl text-automotive-silver">
+          <p className="text-xl text-muted-foreground">
             {t('reviews.subtitle')}
           </p>
         </div>
@@ -59,24 +59,24 @@ const Reviews = () => {
           {reviews.map((review, index) => (
             <div
               key={review.name}
-              className="glass-effect rounded-xl p-6 animate-scale-in hover:transform hover:scale-105 transition-all duration-300 flex flex-col justify-between h-full"
+              className="glass-effect rounded-xl p-6 animate-scale-in card-hover flex flex-col justify-between h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Quote className="text-automotive-gold mb-4" size={24} />
+              <Quote className="text-gold mb-4" size={24} />
 
               <div className="flex items-center mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="text-automotive-gold fill-current" size={16} />
+                  <Star key={i} className="text-gold fill-current" size={16} />
                 ))}
               </div>
 
-              <p className="text-automotive-silver text-sm mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                 {review.text[language]}
               </p>
 
               <div className="text-left mt-auto">
-                <h4 className="text-white font-semibold text-sm">{review.name}</h4>
-                <p className="text-automotive-gold text-xs">{review.car}</p>
+                <h4 className="text-foreground font-semibold text-sm">{review.name}</h4>
+                <p className="text-gold text-xs">{review.car}</p>
               </div>
             </div>
           ))}
@@ -84,10 +84,10 @@ const Reviews = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-automotive-silver mb-6">{t('reviews.cta.text')}</p>
+          <p className="text-muted-foreground mb-6">{t('reviews.cta.text')}</p>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-automotive-gold hover:bg-automotive-gold/90 text-automotive-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             {t('reviews.cta.button')}
           </a>

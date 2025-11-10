@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header className={`fixed w-full z-40 transition-all duration-300 ${
-      isScrolled ? 'bg-automotive-black/95 backdrop-blur-sm' : 'bg-transparent'
+      isScrolled ? 'glass-effect' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -53,7 +53,7 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-automotive-silver hover:text-automotive-gold transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
               >
                 {item.label}
               </a>
@@ -65,7 +65,7 @@ const Header = () => {
           <LanguageToggle />
             <a
           href="/admin"
-          className="border border-automotive-silver text-automotive-silver hover:bg-automotive-gold hover:text-automotive-black font-semibold px-4 py-2 rounded-lg transition-all duration-300"
+          className="border border-border text-foreground hover:bg-gold hover:text-navy font-semibold px-4 py-2 rounded-lg transition-all duration-300"
           >
           Admin Login
           </a>
@@ -75,7 +75,7 @@ const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-automotive-silver hover:text-automotive-gold transition-colors"
+            className="md:hidden text-muted-foreground hover:text-gold transition-colors"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -83,21 +83,21 @@ const Header = () => {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-automotive-charcoal">
+          <nav className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-automotive-silver hover:text-automotive-gold transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
                 >
                   {item.label}
                 </a>
               ))}
               <a
                 href="/admin"
-                className="border mt-2 border-automotive-silver text-automotive-silver hover:bg-automotive-gold hover:text-automotive-black font-semibold px-4 py-2 rounded-lg transition-all duration-300"
+                className="border mt-2 border-border text-foreground hover:bg-gold hover:text-navy font-semibold px-4 py-2 rounded-lg transition-all duration-300"
               >
                 Admin Login
               </a>

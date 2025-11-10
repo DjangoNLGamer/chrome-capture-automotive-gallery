@@ -40,7 +40,7 @@ const Portfolio = () => {
   const displayed = selectedCategory ? photos.filter((p) => p.category === selectedCategory) : photos;
 
   return (
-    <section id="portfolio" className="py-20 bg-automotive-charcoal">
+    <section id="portfolio" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-16">
           <div>
@@ -52,7 +52,7 @@ const Portfolio = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setShowUpload((s) => !s)}
-              className="px-4 py-2 rounded bg-automotive-gold text-automotive-black font-medium"
+              className="px-4 py-2 rounded bg-gold text-navy font-medium"
             >
               {showUpload ? t('portfolio.closeUpload') : t('portfolio.openUpload')}
             </button>
@@ -72,8 +72,8 @@ const Portfolio = () => {
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 selectedCategory === cat.id
-                  ? 'bg-automotive-gold text-automotive-black border-2 border-automotive-gold'
-                  : 'bg-automotive-black/50 text-automotive-silver hover:bg-automotive-gold/20 hover:text-automotive-gold'
+                  ? 'bg-gold text-navy border-2 border-gold'
+                  : 'bg-card/50 text-muted-foreground hover:bg-gold/20 hover:text-gold'
               }`}
             >
               {cat.label}
@@ -82,14 +82,14 @@ const Portfolio = () => {
 
           <button
             onClick={() => setSelectedCategory(null)}
-            className="px-6 py-3 rounded-lg font-medium bg-automotive-black/40 text-automotive-silver"
+            className="px-6 py-3 rounded-lg font-medium bg-card/40 text-muted-foreground"
           >
             {t('portfolio.filter.all')}
           </button>
         </div>
 
         {displayed.length === 0 && (
-          <div className="text-center mt-12 text-xl text-automotive-silver">
+          <div className="text-center mt-12 text-xl text-muted-foreground">
             {t('portfolio.placeholder')}
           </div>
         )}
@@ -101,7 +101,7 @@ const Portfolio = () => {
               return (
                 <div
                   key={item.id}
-                  className="group relative overflow-hidden rounded-xl bg-automotive-black animate-scale-in"
+                  className="group relative overflow-hidden rounded-xl bg-card animate-scale-in card-hover"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="aspect-w-4 aspect-h-3 w-full">
@@ -113,9 +113,9 @@ const Portfolio = () => {
                     />
                   </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-automotive-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
                     </div>
                   </div>
                 </div>
