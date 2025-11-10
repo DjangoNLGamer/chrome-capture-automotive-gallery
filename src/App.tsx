@@ -1,5 +1,3 @@
-// App.tsx
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -8,12 +6,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
-// Pagina’s
+// Pages
 import Index from "../pages/Index";
 import NotFound from "../pages/NotFound";
-import AdminLogin from "../pages/adminlogin";
-import DragDrop from "../pages/dragdrop";
-import Contact from "../src/components/Contact";
+import AdminLogin from "../pages/AdminLogin";
+import DragDrop from "../pages/DragDrop";
+import Contact from "@/components/Contact";
 
 const queryClient = new QueryClient();
 

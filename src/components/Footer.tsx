@@ -68,7 +68,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.id}>
-                  <span className="text-automotive-silver">{service.label}</span>
+                  <a 
+                    href="#services" 
+                    className="text-automotive-silver hover:text-automotive-gold transition-colors cursor-pointer"
+                  >
+                    {service.label}
+                  </a>
                 </li>
               ))}
             </ul>
