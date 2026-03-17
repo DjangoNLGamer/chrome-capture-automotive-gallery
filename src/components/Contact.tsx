@@ -31,13 +31,7 @@ const Contact = () => {
         title: t('contact.toast.success.title'),
         description: t('contact.toast.success.description'),
       });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: '',
-      });
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch (err) {
       const error = err as Error;
       console.error('Verzenden mislukt:', error.message);
@@ -49,30 +43,10 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
-      icon: Mail,
-      title: t('contact.info.email'),
-      details: 'Djangohaemers251205@gmail.com',
-      action: 'mailto:Djangohaemers251205@gmail.com',
-    },
-    {
-      icon: Phone,
-      title: t('contact.info.phone'),
-      details: '+31 (06) 39726977',
-      action: 'tel:+31639726977',
-    },
-    {
-      icon: MapPin,
-      title: t('contact.info.location'),
-      details: 'Limburg, Kerkrade',
-      action: '#',
-    },
-    {
-      icon: Clock,
-      title: t('contact.info.hours'),
-      details: t('contact.hours.details'),
-      action: '#',
-    },
+    { icon: Mail, title: t('contact.info.email'), details: 'Djangohaemers251205@gmail.com', action: 'mailto:Djangohaemers251205@gmail.com' },
+    { icon: Phone, title: t('contact.info.phone'), details: '+31 (06) 39726977', action: 'tel:+31639726977' },
+    { icon: MapPin, title: t('contact.info.location'), details: 'Limburg, Kerkrade', action: '#' },
+    { icon: Clock, title: t('contact.info.hours'), details: t('contact.hours.details'), action: '#' },
   ];
 
   return (
@@ -97,9 +71,9 @@ const Contact = () => {
                 <a
                   key={info.title}
                   href={info.action}
-                  className="flex items-center p-4 glass-effect rounded-lg hover:bg-white/10 transition-all duration-300 group"
+                  className="flex items-center p-4 glass-effect rounded-lg hover:border-gold/30 transition-all duration-300 group"
                 >
-                  <info.icon className="text-white mr-4" size={24} />
+                  <info.icon className="text-gold mr-4 group-hover:scale-110 transition-transform" size={24} />
                   <div>
                     <div className="text-foreground font-semibold">{info.title}</div>
                     <div className="text-muted-foreground">{info.details}</div>
@@ -108,7 +82,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="glass-effect rounded-xl p-8">
+            <div className="glass-effect rounded-xl p-8 gold-border-top">
               <h4 className="text-xl font-bold text-foreground mb-4">{t('contact.choose.us')}</h4>
               <ul className="space-y-3 text-muted-foreground">
                 {[
@@ -118,7 +92,7 @@ const Contact = () => {
                   t('contact.choose.pricing'),
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
                     {item}
                   </li>
                 ))}
@@ -135,30 +109,18 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-muted-foreground mb-2">
-                    {t('contact.form.name')}
-                  </label>
+                  <label className="block text-muted-foreground mb-2">{t('contact.form.name')}</label>
                   <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors"
+                    type="text" name="name" value={formData.name} onChange={handleChange} required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all"
                     placeholder={t('contact.form.placeholder.name')}
                   />
                 </div>
                 <div>
-                  <label className="block text-muted-foreground mb-2">
-                    {t('contact.form.email')}
-                  </label>
+                  <label className="block text-muted-foreground mb-2">{t('contact.form.email')}</label>
                   <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors"
+                    type="email" name="email" value={formData.email} onChange={handleChange} required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all"
                     placeholder={t('contact.form.placeholder.email')}
                   />
                 </div>
@@ -166,26 +128,18 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-muted-foreground mb-2">
-                    Telefoonnummer (optioneel)
-                  </label>
+                  <label className="block text-muted-foreground mb-2">Telefoonnummer (optioneel)</label>
                   <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors"
+                    type="tel" name="phone" value={formData.phone} onChange={handleChange}
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all"
                     placeholder="06-12345678"
                   />
                 </div>
                 <div>
                   <label className="block text-muted-foreground mb-2">Dienst</label>
                   <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background text-foreground border border-border rounded-lg focus:border-gold focus:outline-none transition-colors"
+                    name="service" value={formData.service} onChange={handleChange} required
+                    className="w-full px-4 py-3 bg-background text-foreground border border-border rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all"
                   >
                     <option value="">Selecteer een dienst</option>
                     <option value="locatieshoot">Fotoshoot op locatie</option>
@@ -197,23 +151,17 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block text-muted-foreground mb-2">
-                  {t('contact.form.message')}
-                </label>
+                <label className="block text-muted-foreground mb-2">{t('contact.form.message')}</label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:outline-none transition-colors resize-none"
+                  name="message" value={formData.message} onChange={handleChange} required rows={5}
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all resize-none"
                   placeholder={t('contact.form.placeholder.message')}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full py-4 btn-gold rounded-lg"
               >
                 {t('contact.form.submit')}
               </button>
