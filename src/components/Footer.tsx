@@ -27,7 +27,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <Camera className="text-gold mr-3" size={32} />
+              <Camera className="text-white mr-3" size={32} />
               <div className="font-display text-2xl font-bold text-gradient">
                 EXOTIC<span className="gold-gradient">AUTOMOTIVE</span>
               </div>
@@ -36,13 +36,13 @@ const Footer = () => {
               {t('footer.brand.description')}
             </p>
             <div className="flex space-x-4">
-              <a href="mailto:hello@exoticautomotive.com" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="mailto:hello@exoticautomotive.com" className="text-muted-foreground hover:text-white transition-colors">
                 <Mail size={20} />
               </a>
-              <a href="tel:+15551234567" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="tel:+15551234567" className="text-muted-foreground hover:text-white transition-colors">
                 <Phone size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-white transition-colors">
                 <MapPin size={20} />
               </a>
             </div>
@@ -54,7 +54,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={`#${link.id}`} className="text-muted-foreground hover:text-gold transition-colors">
+                  <a href={`#${link.id}`} className="text-muted-foreground hover:text-white transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -70,7 +70,7 @@ const Footer = () => {
                 <li key={service.id}>
                   <a 
                     href="#services" 
-                    className="text-muted-foreground hover:text-gold transition-colors cursor-pointer"
+                    className="text-muted-foreground hover:text-white transition-colors cursor-pointer"
                   >
                     {service.label}
                   </a>

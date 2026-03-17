@@ -97,9 +97,9 @@ const Contact = () => {
                 <a
                   key={info.title}
                   href={info.action}
-                  className="flex items-center p-4 glass-effect rounded-lg hover:bg-gold/10 transition-all duration-300 group"
+                  className="flex items-center p-4 glass-effect rounded-lg hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <info.icon className="text-gold mr-4" size={24} />
+                  <info.icon className="text-white mr-4" size={24} />
                   <div>
                     <div className="text-foreground font-semibold">{info.title}</div>
                     <div className="text-muted-foreground">{info.details}</div>
@@ -118,7 +118,7 @@ const Contact = () => {
                   t('contact.choose.pricing'),
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-white rounded-full mr-3" />
                     {item}
                   </li>
                 ))}
@@ -213,7 +213,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 {t('contact.form.submit')}
               </button>

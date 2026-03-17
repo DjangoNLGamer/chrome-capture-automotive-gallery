@@ -75,7 +75,9 @@ export default {
 				gold: {
 					DEFAULT: 'hsl(var(--gold-accent))',
 					light: 'hsl(var(--gold-light))'
-				}
+				},
+				'automotive-black': '#000000',
+				'automotive-gold': '#ebca14'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

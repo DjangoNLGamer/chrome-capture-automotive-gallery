@@ -31,7 +31,7 @@ const About = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 {t('about.workTogether')}
               </a>
@@ -50,7 +50,7 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 glass-effect rounded-xl p-6">
-                <p className="text-gold font-semibold">Professionele Fotograaf</p>
+                <p className="text-white font-semibold">Professionele Fotograaf</p>
                 <p className="text-muted-foreground">Auto Fanaat</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ const About = () => {
                   className="glass-effect rounded-xl p-6 text-center animate-scale-in card-hover"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <stat.icon className="mx-auto text-gold mb-3" size={32} />
+                  <stat.icon className="mx-auto text-white mb-3" size={32} />
                   <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
                   <div className="text-muted-foreground text-sm">{stat.label}</div>
                 </div>

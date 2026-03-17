@@ -111,21 +111,21 @@ const Diensten = () => {
               className="glass-effect rounded-xl p-8 animate-fade-in card-hover"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <dienst.icon className="text-gold mb-6" size={48} />
+              <dienst.icon className="text-white mb-6" size={48} />
               <h3 className="text-2xl font-bold text-foreground mb-4">{dienst.title}</h3>
               <p className="text-muted-foreground mb-6">{dienst.description}</p>
 
               <ul className="space-y-2 mb-6">
                 {dienst.features.map((feature) => (
                   <li key={feature} className="flex items-center text-foreground">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-white rounded-full mr-3" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-gold">{dienst.price}</span>
+                <span className="text-2xl font-bold text-white">{dienst.price}</span>
                 <div className="flex items-center text-muted-foreground">
                   <Clock size={16} className="mr-2" />
                   {dienst.duration}
@@ -158,7 +158,7 @@ const Diensten = () => {
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gold text-navy px-6 py-2 rounded-full text-sm font-bold">
+                  <span className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold">
                     {t('services.package.popular')}
                   </span>
                 </div>
@@ -166,7 +166,7 @@ const Diensten = () => {
 
               <div className="text-center mb-8">
                 <h4 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h4>
-                <div className="text-4xl font-bold text-gold mb-2">{pkg.price}</div>
+                <div className="text-4xl font-bold text-white mb-2">{pkg.price}</div>
                 <p className="text-muted-foreground">{pkg.duration} sessie</p>
               </div>
 
@@ -181,7 +181,7 @@ const Diensten = () => {
 
               <button
                 onClick={() => navigate('contact')}
-                className="w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 bg-gold text-navy hover:bg-gold-light"
+                className="w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-200"
               >
                 {t('services.button.book')}
               </button>

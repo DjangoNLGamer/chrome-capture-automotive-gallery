@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 
 interface LanguageContextType {
   language: 'en' | 'nl';
@@ -263,7 +263,7 @@ const translations = {
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<'en' | 'nl'>('en');
 
-  const t = (key: string, variables?: Record<string, any>): string => {
+  const t = useCallback((key: string, variables?: Record<string, any>): string => {
     let translation = translations[language][key as keyof typeof translations.en] || key;
 
     // Vervang placeholders als er variabelen zijn meegegeven
@@ -274,7 +274,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
 
     return translation;
-  };
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

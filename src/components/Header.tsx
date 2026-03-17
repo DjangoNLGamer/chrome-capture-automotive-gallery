@@ -53,7 +53,7 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-white transition-colors duration-300 font-medium"
               >
                 {item.label}
               </a>
@@ -65,7 +65,7 @@ const Header = () => {
           <LanguageToggle />
             <a
           href="/admin"
-          className="border border-border text-foreground hover:bg-gold hover:text-navy font-semibold px-4 py-2 rounded-lg transition-all duration-300"
+          className="border border-border text-foreground hover:bg-white hover:text-black font-semibold px-4 py-2 rounded-lg transition-all duration-300"
           >
           Admin Login
           </a>
@@ -75,7 +75,7 @@ const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-muted-foreground hover:text-gold transition-colors"
+            className="md:hidden text-muted-foreground hover:text-white transition-colors"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -90,7 +90,7 @@ const Header = () => {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-white transition-colors duration-300 font-medium"
                 >
                   {item.label}
                 </a>

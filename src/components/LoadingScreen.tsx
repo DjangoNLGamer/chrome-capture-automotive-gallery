@@ -42,8 +42,11 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
         <div className="w-80 max-w-[90vw] mx-auto space-y-3">
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gold-gradient rounded-full transition-all duration-300 ease-out shadow-lg"
-              style={{ width: `${progress}%` }}
+              className="h-full rounded-full transition-all duration-300 ease-out shadow-lg"
+              style={{ 
+                width: `${progress}%`,
+                background: 'linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%)'
+              }}
             />
           </div>
           

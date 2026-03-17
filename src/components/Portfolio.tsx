@@ -52,7 +52,7 @@ const Portfolio = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setShowUpload((s) => !s)}
-              className="px-4 py-2 rounded bg-gold text-navy font-medium"
+              className="px-4 py-2 rounded bg-white text-black font-medium"
             >
               {showUpload ? t('portfolio.closeUpload') : t('portfolio.openUpload')}
             </button>
@@ -72,8 +72,8 @@ const Portfolio = () => {
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 selectedCategory === cat.id
-                  ? 'bg-gold text-navy border-2 border-gold'
-                  : 'bg-card/50 text-muted-foreground hover:bg-gold/20 hover:text-gold'
+                  ? 'bg-white text-black border-2 border-white'
+                  : 'bg-card/50 text-muted-foreground hover:bg-white/20 hover:text-white'
               }`}
             >
               {cat.label}

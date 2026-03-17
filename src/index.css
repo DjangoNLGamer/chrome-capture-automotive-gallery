@@ -7,97 +7,100 @@
 
 @layer base {
   :root {
-    --background: 248 248 250;
-    --foreground: 15 23 42;
+    /* Pure Black Theme */
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    
 
-    --card: 255 255 255;
-    --card-foreground: 15 23 42;
+    --card: 10 10 10;
+    --card-foreground: 255 255 255;
 
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --popover: 10 10 10;
+    --popover-foreground: 255 255 255;
 
-    --primary: 15 23 42;
-    --primary-foreground: 248 248 250;
+    --primary: 255 255 255;
+    --primary-foreground: 0 0 0;
 
-    --secondary: 241 245 249;
-    --secondary-foreground: 15 23 42;
+    --secondary: 20 20 20;
+    --secondary-foreground: 255 255 255;
 
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
+    --muted: 20 20 20;
+    --muted-foreground: 150 150 150;
 
-    --accent: 226 232 240;
-    --accent-foreground: 15 23 42;
+    --accent: 30 30 30;
+    --accent-foreground: 255 255 255;
 
-    --destructive: 239 68 68;
+    --destructive: 204 0 0;
     --destructive-foreground: 255 255 255;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 15 23 42;
+    --border: 40 40 40;
+    --input: 20 20 20;
+    --ring: 255 255 255;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 248 250 252;
-    --sidebar-foreground: 30 41 59;
-    --sidebar-primary: 15 23 42;
-    --sidebar-primary-foreground: 248 250 252;
-    --sidebar-accent: 241 245 249;
-    --sidebar-accent-foreground: 15 23 42;
-    --sidebar-border: 226 232 240;
-    --sidebar-ring: 15 23 42;
+    --sidebar-background: 0 0 0;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 255 255 255;
+    --sidebar-primary-foreground: 0 0 0;
+    --sidebar-accent: 20 20 20;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 40 40 40;
+    --sidebar-ring: 255 255 255;
 
-    /* Professional color palette */
-    --navy: 15 23 42;
-    --navy-light: 30 41 59;
-    --slate: 51 65 85;
-    --gold-accent: 234 179 8;
-    --gold-light: 250 204 21;
+    /* Professional color palette - Black only */
+    --navy: 0 0 0;
+    --navy-light: 10 10 10;
+    --slate: 20 20 20;
+    --gold-accent: 255 255 255;
+    --gold-light: 200 200 200;
   }
 
   .dark {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
+    /* Same as root - Pure Black */
+    --background: 0 0 0;
+    --foreground: 255 255 255;
 
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
+    --card: 10 10 10;
+    --card-foreground: 255 255 255;
 
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
+    --popover: 10 10 10;
+    --popover-foreground: 255 255 255;
 
-    --primary: 248 250 252;
-    --primary-foreground: 15 23 42;
+    --primary: 255 255 255;
+    --primary-foreground: 0 0 0;
 
-    --secondary: 51 65 85;
-    --secondary-foreground: 248 250 252;
+    --secondary: 20 20 20;
+    --secondary-foreground: 255 255 255;
 
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
+    --muted: 20 20 20;
+    --muted-foreground: 150 150 150;
 
-    --accent: 71 85 105;
-    --accent-foreground: 248 250 252;
+    --accent: 30 30 30;
+    --accent-foreground: 255 255 255;
 
-    --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
+    --destructive: 204 0 0;
+    --destructive-foreground: 255 255 255;
 
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 248 250 252;
+    --border: 40 40 40;
+    --input: 20 20 20;
+    --ring: 255 255 255;
 
-    --sidebar-background: 15 23 42;
-    --sidebar-foreground: 241 245 249;
-    --sidebar-primary: 248 250 252;
-    --sidebar-primary-foreground: 15 23 42;
-    --sidebar-accent: 30 41 59;
-    --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 51 65 85;
-    --sidebar-ring: 248 250 252;
+    --sidebar-background: 0 0 0;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 255 255 255;
+    --sidebar-primary-foreground: 0 0 0;
+    --sidebar-accent: 20 20 20;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 40 40 40;
+    --sidebar-ring: 255 255 255;
 
-    /* Professional color palette - dark mode */
-    --navy: 15 23 42;
-    --navy-light: 30 41 59;
-    --slate: 71 85 105;
-    --gold-accent: 250 204 21;
-    --gold-light: 253 224 71;
+    /* Professional color palette - Black only */
+    --navy: 0 0 0;
+    --navy-light: 10 10 10;
+    --slate: 20 20 20;
+    --gold-accent: 255 255 255;
+    --gold-light: 200 200 200;
   }
 }
 
@@ -131,47 +134,31 @@
   }
   
   .glass-effect {
-    backdrop-filter: blur(20px);
-    background: rgba(248, 250, 252, 0.8);
-    border: 1px solid rgba(226, 232, 240, 0.5);
-    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
-  }
-
-  .dark .glass-effect {
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .professional-gradient {
-    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
+  .automotive-gradient {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--slate)) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .gold-gradient {
-    background: linear-gradient(135deg, hsl(var(--gold-accent)) 0%, hsl(var(--gold-light)) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
-  }
-
-  .dark .card-hover:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  
+  .professional-gradient {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
   }
   
   .login-button {
@@ -183,4 +170,3 @@
   
 
 }
-

@@ -1,19 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Camera } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
-  const { t } = useLanguage();
-  const texts = [t('hero.subtitle1'), t('hero.subtitle2'), t('hero.subtitle3'), t('hero.subtitle4')]; // Wisselende teksten
+  const { t, language } = useLanguage();
+  const texts = useMemo(() => [
+    t('hero.subtitle1'), 
+    t('hero.subtitle2'), 
+    t('hero.subtitle3'), 
+    t('hero.subtitle4')
+  ], [t]); // Wisselende teksten - t is now memoized with useCallback
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
+  // Reset typing effect when language changes
   useEffect(() => {
-    if (subIndex === texts[index].length + 1 && !isDeleting) {
-      setTimeout(() => setIsDeleting(true), 1500); // Wacht voordat het backspace-effect start
+    setText('');
+    setIndex(0);
+    setSubIndex(0);
+    setIsDeleting(false);
+  }, [language]);
+
+  useEffect(() => {
+    // Safety check: ensure texts array has items and current index is valid
+    if (!texts || texts.length === 0 || !texts[index]) {
       return;
+    }
+
+    const currentText = texts[index];
+    const textLength = currentText.length;
+
+    if (subIndex === textLength + 1 && !isDeleting) {
+      const timeout = setTimeout(() => setIsDeleting(true), 1500); // Wacht voordat het backspace-effect start
+      return () => clearTimeout(timeout);
     }
 
     if (subIndex === 0 && isDeleting) {
@@ -23,7 +44,7 @@ const Hero = () => {
     }
 
     const timeout = setTimeout(() => {
-      setText(texts[index].slice(0, subIndex));
+      setText(currentText.slice(0, subIndex));
       setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
     }, isDeleting ? 50 : 100); // Snelheid aanpassen
 
@@ -39,7 +60,7 @@ const Hero = () => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gold/10 rounded-full blur-xl animate-pulse" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" />
         <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-xl animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-2xl animate-pulse delay-500" />
       </div>
@@ -47,7 +68,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
-          <Camera className="mx-auto mb-6 text-gold" size={64} />
+          <Camera className="mx-auto mb-6 text-white" size={64} />
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="text-gradient">EXOTIC</span>
@@ -70,7 +91,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="#portfolio"
-              className="px-8 py-4 bg-gold hover:bg-gold-light text-navy font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              className="px-8 py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
             >
               {t('hero.viewPortfolio')}
             </a>
