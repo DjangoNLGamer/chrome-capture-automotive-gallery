@@ -2,7 +2,7 @@ import { Camera, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
-  const { t } = useLanguage(); // Haal de vertaalfunctie op
+  const { t } = useLanguage();
 
   const quickLinks = [
     { id: 'home', label: t('footer.quickLinks.home') },
@@ -21,13 +21,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card py-12 border-t border-border">
+    <footer className="bg-card py-12 border-t border-gold/10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <Camera className="text-white mr-3" size={32} />
+              <Camera className="text-gold mr-3" size={32} />
               <div className="font-display text-2xl font-bold text-gradient">
                 EXOTIC<span className="gold-gradient">AUTOMOTIVE</span>
               </div>
@@ -36,13 +36,13 @@ const Footer = () => {
               {t('footer.brand.description')}
             </p>
             <div className="flex space-x-4">
-              <a href="mailto:hello@exoticautomotive.com" className="text-muted-foreground hover:text-white transition-colors">
+              <a href="mailto:hello@exoticautomotive.com" className="text-muted-foreground hover:text-gold transition-colors">
                 <Mail size={20} />
               </a>
-              <a href="tel:+15551234567" className="text-muted-foreground hover:text-white transition-colors">
+              <a href="tel:+15551234567" className="text-muted-foreground hover:text-gold transition-colors">
                 <Phone size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
                 <MapPin size={20} />
               </a>
             </div>
@@ -54,7 +54,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={`#${link.id}`} className="text-muted-foreground hover:text-white transition-colors">
+                  <a href={`#${link.id}`} className="text-muted-foreground hover:text-gold transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -68,10 +68,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.id}>
-                  <a 
-                    href="#services" 
-                    className="text-muted-foreground hover:text-white transition-colors cursor-pointer"
-                  >
+                  <a href="#services" className="text-muted-foreground hover:text-gold transition-colors cursor-pointer">
                     {service.label}
                   </a>
                 </li>
@@ -80,7 +77,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 text-center">
+        {/* Gold divider */}
+        <div className="gold-divider mt-12 mb-8" />
+        <div className="text-center">
           <p className="text-muted-foreground">{t('footer.copyright')}</p>
         </div>
       </div>

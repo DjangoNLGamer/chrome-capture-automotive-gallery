@@ -1,4 +1,3 @@
-
 import { Award, Camera, Users, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -31,7 +30,7 @@ const About = () => {
             <div className="mt-8">
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-8 py-4 btn-gold rounded-lg"
               >
                 {t('about.workTogether')}
               </a>
@@ -40,17 +39,16 @@ const About = () => {
 
           {/* Stats & Image */}
           <div className="animate-slide-in-right">
-            {/* Placeholder for photographer image */}
             <div className="relative mb-12">
-              <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-background rounded-xl overflow-hidden">
+              <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-background rounded-xl overflow-hidden border border-gold/10">
                 <img
                   src="https://i.ibb.co/7JkV7cHV/Whats-App-Image-2025-06-10-at-15-24-48-0a7bf359.jpg"
                   alt="Professional photographer"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 glass-effect rounded-xl p-6">
-                <p className="text-white font-semibold">Professionele Fotograaf</p>
+              <div className="absolute -bottom-6 -left-6 glass-effect rounded-xl p-6 gold-border-top">
+                <p className="text-gold font-semibold">Professionele Fotograaf</p>
                 <p className="text-muted-foreground">Auto Fanaat</p>
               </div>
             </div>
@@ -63,8 +61,8 @@ const About = () => {
                   className="glass-effect rounded-xl p-6 text-center animate-scale-in card-hover"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <stat.icon className="mx-auto text-white mb-3" size={32} />
-                  <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
+                  <stat.icon className="mx-auto text-gold mb-3" size={32} />
+                  <div className="text-3xl font-bold gold-gradient mb-2">{stat.number}</div>
                   <div className="text-muted-foreground text-sm">{stat.label}</div>
                 </div>
               ))}

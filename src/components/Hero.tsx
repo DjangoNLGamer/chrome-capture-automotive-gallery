@@ -9,13 +9,12 @@ const Hero = () => {
     t('hero.subtitle2'), 
     t('hero.subtitle3'), 
     t('hero.subtitle4')
-  ], [t]); // Wisselende teksten - t is now memoized with useCallback
+  ], [t]);
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Reset typing effect when language changes
   useEffect(() => {
     setText('');
     setIndex(0);
@@ -24,29 +23,25 @@ const Hero = () => {
   }, [language]);
 
   useEffect(() => {
-    // Safety check: ensure texts array has items and current index is valid
-    if (!texts || texts.length === 0 || !texts[index]) {
-      return;
-    }
-
+    if (!texts || texts.length === 0 || !texts[index]) return;
     const currentText = texts[index];
     const textLength = currentText.length;
 
     if (subIndex === textLength + 1 && !isDeleting) {
-      const timeout = setTimeout(() => setIsDeleting(true), 1500); // Wacht voordat het backspace-effect start
+      const timeout = setTimeout(() => setIsDeleting(true), 1500);
       return () => clearTimeout(timeout);
     }
 
     if (subIndex === 0 && isDeleting) {
       setIsDeleting(false);
-      setIndex((prev) => (prev + 1) % texts.length); // Wissel naar volgende tekst
+      setIndex((prev) => (prev + 1) % texts.length);
       return;
     }
 
     const timeout = setTimeout(() => {
       setText(currentText.slice(0, subIndex));
       setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
-    }, isDeleting ? 50 : 100); // Snelheid aanpassen
+    }, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, isDeleting, texts]);
@@ -58,17 +53,17 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
 
-      {/* Animated Background Elements */}
+      {/* Gold ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-2xl animate-pulse delay-500" />
+        <div className="absolute top-20 left-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-56 h-56 bg-gold-dark/15 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gold/5 rounded-full blur-3xl animate-glow" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
-          <Camera className="mx-auto mb-6 text-white" size={64} />
+          <Camera className="mx-auto mb-6 text-gold" size={64} />
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="text-gradient">EXOTIC</span>
@@ -80,7 +75,7 @@ const Hero = () => {
           <div className="h-16 mb-8">
             <p className="text-xl md:text-2xl text-muted-foreground font-medium">
               {text}
-              <span className="animate-pulse">|</span>
+              <span className="text-gold animate-pulse">|</span>
             </p>
           </div>
 
@@ -91,13 +86,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="#portfolio"
-              className="px-8 py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              className="btn-gold px-8 py-4 rounded-lg text-primary-foreground"
             >
               {t('hero.viewPortfolio')}
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 border-2 border-border text-foreground hover:bg-accent hover:text-accent-foreground font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 border-2 border-gold/30 text-foreground hover:bg-gold/10 hover:border-gold font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               {t('hero.bookShoot')}
             </a>
@@ -107,8 +102,8 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2 animate-pulse" />
+        <div className="w-6 h-10 border-2 border-gold/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gold rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>

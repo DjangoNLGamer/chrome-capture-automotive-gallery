@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
@@ -19,7 +18,6 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
         return prev + 2;
       });
     }, 50);
-
     return () => clearInterval(timer);
   }, [onLoadingComplete]);
 
@@ -28,7 +26,6 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background">
       <div className="text-center space-y-8">
-        {/* Logo/Brand */}
         <div className="space-y-2">
           <h1 className="font-display text-5xl md:text-7xl font-bold text-gradient tracking-tight">
             EXOTIC
@@ -37,21 +34,19 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
             AUTOMOTIVE
           </h1>
         </div>
-        
-        {/* Progress Bar Container */}
+
         <div className="w-80 max-w-[90vw] mx-auto space-y-3">
-          <div className="h-2 bg-muted rounded-full overflow-hidden">
-            <div 
-              className="h-full rounded-full transition-all duration-300 ease-out shadow-lg"
-              style={{ 
+          <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-300 ease-out"
+              style={{
                 width: `${progress}%`,
-                background: 'linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%)'
+                background: 'linear-gradient(135deg, hsl(43, 74%, 49%) 0%, hsl(40, 80%, 35%) 100%)',
+                boxShadow: '0 0 12px hsla(43, 74%, 49%, 0.4)',
               }}
             />
           </div>
-          
-          {/* Progress Text */}
-          <p className="text-muted-foreground text-sm font-medium tracking-wider">
+          <p className="text-gold/60 text-sm font-medium tracking-wider">
             {progress}%
           </p>
         </div>

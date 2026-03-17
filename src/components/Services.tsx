@@ -2,7 +2,6 @@ import { Camera, Clock, MapPin, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 
-
 const Diensten = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
@@ -111,21 +110,21 @@ const Diensten = () => {
               className="glass-effect rounded-xl p-8 animate-fade-in card-hover"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <dienst.icon className="text-white mb-6" size={48} />
+              <dienst.icon className="text-gold mb-6" size={48} />
               <h3 className="text-2xl font-bold text-foreground mb-4">{dienst.title}</h3>
               <p className="text-muted-foreground mb-6">{dienst.description}</p>
 
               <ul className="space-y-2 mb-6">
                 {dienst.features.map((feature) => (
                   <li key={feature} className="flex items-center text-foreground">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-white">{dienst.price}</span>
+                <span className="text-2xl font-bold gold-gradient">{dienst.price}</span>
                 <div className="flex items-center text-muted-foreground">
                   <Clock size={16} className="mr-2" />
                   {dienst.duration}
@@ -134,6 +133,9 @@ const Diensten = () => {
             </div>
           ))}
         </div>
+
+        {/* Gold divider */}
+        <div className="gold-divider mb-20" />
 
         {/* Prijs pakketten */}
         <div className="text-center mb-16">
@@ -151,14 +153,14 @@ const Diensten = () => {
               key={pkg.name}
               className={`relative rounded-xl p-8 animate-scale-in card-hover ${
                 pkg.popular
-                  ? 'bg-gradient-to-b from-gold/20 to-secondary border-2 border-gold'
+                  ? 'bg-gradient-to-b from-gold/15 to-secondary border-2 border-gold gold-pulse'
                   : 'glass-effect'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold">
+                  <span className="btn-gold px-6 py-2 rounded-full text-sm font-bold">
                     {t('services.package.popular')}
                   </span>
                 </div>
@@ -166,7 +168,7 @@ const Diensten = () => {
 
               <div className="text-center mb-8">
                 <h4 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h4>
-                <div className="text-4xl font-bold text-white mb-2">{pkg.price}</div>
+                <div className="text-4xl font-bold gold-gradient mb-2">{pkg.price}</div>
                 <p className="text-muted-foreground">{pkg.duration} sessie</p>
               </div>
 
@@ -181,7 +183,7 @@ const Diensten = () => {
 
               <button
                 onClick={() => navigate('contact')}
-                className="w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-200"
+                className="w-full py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 btn-gold"
               >
                 {t('services.button.book')}
               </button>

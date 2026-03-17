@@ -62,11 +62,11 @@ const Reviews = () => {
               className="glass-effect rounded-xl p-6 animate-scale-in card-hover flex flex-col justify-between h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Quote className="text-white mb-4" size={24} />
+              <Quote className="text-gold/50 mb-4" size={24} />
 
               <div className="flex items-center mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="text-white fill-current" size={16} />
+                  <Star key={i} className="text-gold fill-gold" size={16} />
                 ))}
               </div>
 
@@ -76,7 +76,7 @@ const Reviews = () => {
 
               <div className="text-left mt-auto">
                 <h4 className="text-foreground font-semibold text-sm">{review.name}</h4>
-                <p className="text-white text-xs">{review.car}</p>
+                <p className="text-gold/70 text-xs">{review.car}</p>
               </div>
             </div>
           ))}
@@ -87,7 +87,7 @@ const Reviews = () => {
           <p className="text-muted-foreground mb-6">{t('reviews.cta.text')}</p>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 btn-gold rounded-lg"
           >
             {t('reviews.cta.button')}
           </a>

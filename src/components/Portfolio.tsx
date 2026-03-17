@@ -36,7 +36,6 @@ const Portfolio = () => {
     fetchPhotos();
   }, []);
 
-  // Toon alle foto's wanneer geen categorie is geselecteerd
   const displayed = selectedCategory ? photos.filter((p) => p.category === selectedCategory) : photos;
 
   return (
@@ -52,7 +51,7 @@ const Portfolio = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setShowUpload((s) => !s)}
-              className="px-4 py-2 rounded bg-white text-black font-medium"
+              className="btn-gold px-4 py-2 rounded-lg font-medium"
             >
               {showUpload ? t('portfolio.closeUpload') : t('portfolio.openUpload')}
             </button>
@@ -72,8 +71,8 @@ const Portfolio = () => {
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 selectedCategory === cat.id
-                  ? 'bg-white text-black border-2 border-white'
-                  : 'bg-card/50 text-muted-foreground hover:bg-white/20 hover:text-white'
+                  ? 'bg-gold text-primary-foreground border-2 border-gold'
+                  : 'bg-card/50 text-muted-foreground hover:bg-gold/10 hover:text-gold border border-gold/20'
               }`}
             >
               {cat.label}
@@ -82,7 +81,7 @@ const Portfolio = () => {
 
           <button
             onClick={() => setSelectedCategory(null)}
-            className="px-6 py-3 rounded-lg font-medium bg-card/40 text-muted-foreground"
+            className="px-6 py-3 rounded-lg font-medium bg-card/40 text-muted-foreground hover:bg-gold/10 hover:text-gold border border-gold/10 transition-all duration-300"
           >
             {t('portfolio.filter.all')}
           </button>
@@ -101,7 +100,7 @@ const Portfolio = () => {
               return (
                 <div
                   key={item.id}
-                  className="group relative overflow-hidden rounded-xl bg-card animate-scale-in card-hover"
+                  className="group relative overflow-hidden rounded-xl bg-card animate-scale-in card-hover border border-gold/5 hover:border-gold/20"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="aspect-w-4 aspect-h-3 w-full">
