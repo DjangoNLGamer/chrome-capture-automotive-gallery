@@ -1,7 +1,7 @@
 import { Camera, Clock, MapPin, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
-import Link from 'next/link';
+
 
 const Diensten = () => {
   const { t } = useLanguage();
