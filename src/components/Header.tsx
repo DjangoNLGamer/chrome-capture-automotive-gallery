@@ -37,8 +37,8 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-40 transition-all duration-300 ${
-      isScrolled ? 'glass-effect' : 'bg-transparent'
+    <header className={`fixed w-full z-40 transition-all duration-500 ${
+      isScrolled ? 'glass-effect shadow-lg shadow-gold/5' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -53,29 +53,28 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-muted-foreground hover:text-white transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-gold link-underline transition-colors duration-300 font-medium"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* Desktop Extras: Language + Login */}
+          {/* Desktop Extras */}
           <div className="hidden md:flex items-center space-x-4">
-          <LanguageToggle />
+            <LanguageToggle />
             <a
-          href="/admin"
-          className="border border-border text-foreground hover:bg-white hover:text-black font-semibold px-4 py-2 rounded-lg transition-all duration-300"
-          >
-          Admin Login
-          </a>
-        </div>
-
+              href="/admin"
+              className="border border-gold/30 text-foreground hover:bg-gold hover:text-primary-foreground font-semibold px-4 py-2 rounded-lg transition-all duration-300"
+            >
+              Admin Login
+            </a>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-muted-foreground hover:text-white transition-colors"
+            className="md:hidden text-muted-foreground hover:text-gold transition-colors"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -83,21 +82,21 @@ const Header = () => {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border">
+          <nav className="md:hidden mt-4 pb-4 border-t border-gold/10">
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-muted-foreground hover:text-white transition-colors duration-300 font-medium"
+                  className="text-muted-foreground hover:text-gold transition-colors duration-300 font-medium"
                 >
                   {item.label}
                 </a>
               ))}
               <a
                 href="/admin"
-                className="border mt-2 border-border text-foreground hover:bg-gold hover:text-navy font-semibold px-4 py-2 rounded-lg transition-all duration-300"
+                className="border mt-2 border-gold/30 text-foreground hover:bg-gold hover:text-primary-foreground font-semibold px-4 py-2 rounded-lg transition-all duration-300"
               >
                 Admin Login
               </a>
